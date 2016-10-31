@@ -1,0 +1,9 @@
+{
+    "c0": "Unable to connect to the server",
+    "c1": "Credentials file not found.",
+    "c2": "%?% is not a valid connection environment.",
+
+    "l0": "Username and/or password not informed.",
+    "l1": "Incorrect username or password.",
+    "l2": "The community has not approved this user yet."
+}

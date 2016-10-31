@@ -1,0 +1,9 @@
+<Files "credentials.json">
+Order Allow,Deny
+Deny from all
+</Files>
+
+<Files "why.php">
+Order Allow,Deny
+Deny from all
+</Files>
