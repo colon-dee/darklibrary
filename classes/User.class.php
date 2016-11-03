@@ -2,7 +2,7 @@
 class User extends Record {
 
 	const TABLE = 'Users'; // table name
-	const PK = 'codUser'; // primary key
+	const PK = 'idUser'; // primary key
 
 	/**
 	 * Validate and search for an user data from their
@@ -26,7 +26,7 @@ class User extends Record {
 					return "l2";
 				}
 
-				$_SESSION['user']['codUser'] = $data->codUser;
+				$_SESSION['user']['idUser'] = $data->idUser;
 				$_SESSION['user']['loggedin'] = true;
 
 				return 0;
