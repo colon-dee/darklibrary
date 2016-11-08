@@ -15,6 +15,11 @@ CREATE TABLE `Invitations` (
   `code` varchar(16) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `Permissions` (
+  `idPermission` int(11) NOT NULL,
+  `description` varchar(300) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 CREATE TABLE `Users` (
   `idUser` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -27,12 +32,17 @@ ALTER TABLE `Invitations`
   ADD PRIMARY KEY (`idInvitation`),
   ADD KEY `idUser` (`idUser`);
 
+ALTER TABLE `Permissions`
+  ADD PRIMARY KEY (`idPermission`);
+
 ALTER TABLE `Users`
   ADD PRIMARY KEY (`idUser`);
 
 
 ALTER TABLE `Invitations`
   MODIFY `idInvitation` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Permissions`
+  MODIFY `idPermission` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `Users`
   MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
