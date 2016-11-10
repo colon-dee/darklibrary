@@ -13,6 +13,8 @@ class User extends Record {
 	 * @return 	mixed
 	 */
 	static function logIn($username = null, $password = null) {
+		global $def_systemSettings;
+
 		// Verify if user and password were defined
 		if ($username && $password) {
 			$userVerify = User::userVerify($username, $password);
@@ -22,7 +24,7 @@ class User extends Record {
 			if ($data) {
 
 				// Verify whether user was approved by the community
-				if (!$data->approved) {
+				if (!$data->approved && $def_systemSettings->voting) {
 					return "l2";
 				}
 
