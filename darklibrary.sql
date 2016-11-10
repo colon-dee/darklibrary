@@ -22,10 +22,10 @@ CREATE TABLE `Permissions` (
 
 CREATE TABLE `Settings` (
   `idOperationMode` int(11) NOT NULL,
-  `approvalVote` tinyint(1) NOT NULL DEFAULT '1'
+  `voting` tinyint(1) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
-INSERT INTO `Settings` (`idOperationMode`, `approvalVote`) VALUES
+INSERT INTO `Settings` (`idOperationMode`, `voting`) VALUES
 (1, 1);
 
 CREATE TABLE `Users` (
