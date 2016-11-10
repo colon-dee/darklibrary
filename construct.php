@@ -14,6 +14,7 @@ $def_authentication = isset($def_authentication) ? $def_authentication : true; /
 $def_printHTML = isset($def_printHTML) ? $def_printHTML : true; // Define if this file should print the basic view for the page.
 $def_navbar = isset($def_navbar) ? $def_navbar : true; // Define if the navbar should be shown.
 $def_currentTab = isset($def_currentTab) ? $def_currentTab : null; // Give the $def_currentTab a default value.
+$def_systemSettings = isset($def_cred->operationMode) ? new Setting($def_cred->operationMode) : new Setting(1);
 
 if ($def_printHTML) {
 ?>
