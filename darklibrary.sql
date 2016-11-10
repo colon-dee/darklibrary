@@ -20,6 +20,14 @@ CREATE TABLE `Permissions` (
   `description` varchar(300) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `Settings` (
+  `idOperationMode` int(11) NOT NULL,
+  `approvalVote` tinyint(1) NOT NULL DEFAULT '1'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+INSERT INTO `Settings` (`idOperationMode`, `approvalVote`) VALUES
+(1, 1);
+
 CREATE TABLE `Users` (
   `idUser` int(11) NOT NULL,
   `name` varchar(32) NOT NULL,
@@ -35,6 +43,9 @@ ALTER TABLE `Invitations`
 ALTER TABLE `Permissions`
   ADD PRIMARY KEY (`idPermission`);
 
+ALTER TABLE `Settings`
+  ADD PRIMARY KEY (`idOperationMode`);
+
 ALTER TABLE `Users`
   ADD PRIMARY KEY (`idUser`);
 
@@ -43,8 +54,10 @@ ALTER TABLE `Invitations`
   MODIFY `idInvitation` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `Permissions`
   MODIFY `idPermission` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `Settings`
+  MODIFY `idOperationMode` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `Users`
-  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `idUser` int(11) NOT NULL AUTO_INCREMENT;
 
 ALTER TABLE `Invitations`
   ADD CONSTRAINT `fk_idUser_Users_Invitations` FOREIGN KEY (`idUser`) REFERENCES `Users` (`idUser`);
