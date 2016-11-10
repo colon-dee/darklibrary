@@ -1,7 +1,3 @@
-<?php
-define('INCL_FILE', 'true');
-?>
-
 <style>
 body {
     overflow: hidden;
